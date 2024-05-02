@@ -4,6 +4,7 @@ import { API_KEY } from "../config"
 import { API_URL } from "../config"
 import FoodSearch from "./FoodSearch";
 import MealList from "./MealList";
+import MealPlanner from "./MealPlanner";
 
 export default function Homepage(){
     const [data, setData] = useState(null);
@@ -13,6 +14,11 @@ export default function Homepage(){
     const updateTotalFiber = (fiberAmount) => {
       setTotalFiber(prevTotal => fiberAmount);
     };
+
+    let remainingFiber = 25 - parseInt(totalFiber);
+   
+
+    
 
 
 
@@ -29,7 +35,9 @@ export default function Homepage(){
 
           </div>
         </section>
-        <MealList />
+        {/* <MealList /> */}
+        <h2>{remainingFiber}g fiber left!</h2>
+        <MealPlanner remainingFiber={remainingFiber}/>
       </div>
     )
 }

@@ -7,7 +7,7 @@ export default function MealList(){
 
     useEffect(() => {
       // Fetch data from the server when the component mounts
-      axios.get('/api/meal')
+      axios.get('http://localhost:3000/api/meal')
         .then(response => {
           setMeals(response.data);
           console.log(response.data);
@@ -20,13 +20,13 @@ export default function MealList(){
     return(
         <div>
           <h2>Meal List</h2>
-          {/* <ul>
+          <ul>
         {meals.map(meal => (
           <li key={meal.id}>
-            {meal.name} - Fiber: {meal.fiber_amount}
+            {meal.name} - Fiber: {meal.fiber_amount}g
           </li>
         ))}
-      </ul> */}
+      </ul>
         </div>
     );
 }
