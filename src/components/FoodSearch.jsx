@@ -33,23 +33,43 @@ export default function FoodSearch({ updateTotalFiber }){
     useEffect(() => {
         updateTotalFiber(searchResult.reduce((total, result) => total + (result.fiberAmount || 0), 0));
       }, [searchResult]);
+
+
+      function removeSearchResult(index) {
+        setSearchResult(prevMeals => {
+            // Create a copy of the plannedMeals array
+            const updatedMeals = [...prevMeals];
+            // Remove the meal at the specified index
+            updatedMeals.splice(index, 1);
+            return updatedMeals;
+        });
+    }  
+
+  
+
+    // function randomColor(valuers){
+    //     const randomNum = Math.floor(Math.random() * 3);
+    // }
+
+
+    const id = React.useId()
+    const colorWheel = ["#5CC8FF", "#D0FFD6", "#F7B2BD"];
+
+    // const valuers = Math.floor(Math.random() * 3);
+
+    const color = colorWheel[1];
+
+    // const colorIndex = index % colorWheel.length;
+  
+
     return(
         <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    value={query}
-                    onChange={handleInputChange}
-                    placeholder="Enter food/drink"    
-                />
-                <button type="submit">Submit</button>
-            </form>
-            {searchResult && (
+{            searchResult && (
                 <div className="resultsDiv">
                     <ul>
                         {searchResult.map((result, index) => (
-                            <li key={index}>
-                               Food: {result.foodName} Fiber: {result.fiberAmount}
+                            <li style={{color: color}} className="foodSearchFoodItem" key={index}>
+                               Food: {result.foodName} Fiber: {result.fiberAmount}g <button className="foodSearchFoodEatenDeleteBtn" onClick={() => removeSearchResult(index)}>X</button>
                             </li>
                          ))}
                            <li>
@@ -59,6 +79,18 @@ export default function FoodSearch({ updateTotalFiber }){
                 </div>
             )}
             {error && <p>Error: {error.message}</p>}
+            <form className="foodsEatenForm" onSubmit={handleSubmit}>
+                <label className="foodsEatenLabel" htmlFor={id + "-foodsEaten"}>What have you eaten today?</label>
+                <input
+                    type="text"
+                    value={query}
+                    onChange={handleInputChange}
+                    placeholder="Enter food/drink"    
+                    name="foodsEaten"
+                    className="foodSearchFoodEatenInput"
+                />
+                <button className="foodSearchSubmitBtn" type="submit">+</button>
+            </form>
         </div>
    
     )

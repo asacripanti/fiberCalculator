@@ -6,6 +6,7 @@ import FoodSearch from "./FoodSearch";
 import MealList from "./MealList";
 import MealPlanner from "./MealPlanner";
 
+
 export default function Homepage(){
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
@@ -17,54 +18,34 @@ export default function Homepage(){
 
     let remainingFiber = 25 - parseInt(totalFiber);
    
-
+    const colorWheel = ["#5CC8FF", "#D0FFD6", "#F7B2BD", "#464E47"];
+    
     
 
 
 
     return(
-      <div>
-        <h1 className="homepageTitle">Fiber Calculator</h1>
-        <h2>Daily Fiber Goal: 25-30g</h2>
-        <h2>Current Fiber {totalFiber.toFixed(1)}g</h2>
-
-        <section>
-          <h3>What have you eaten today?</h3>
-          <FoodSearch updateTotalFiber={updateTotalFiber} />
-          <div className="foodEaten">
-
-          </div>
+      <div className="homePageShell">
+        <h1 className="homePageTitle">Fiber Calculator</h1>
+        <section className="homePageFiberStats">
+          <h2 className="homePageDailyFiberGoal">Daily Fiber Goal: 25-30g</h2>
+          <h2 className="homePageCurrentFiber">Current Fiber <span className="homePageDynamicCurrentFiber" style={{
+             color: totalFiber < 15 ? 'red' :
+                    totalFiber < 25 && totalFiber >= 15 ? 'orange' :
+                    'green' }}>{totalFiber.toFixed(1)}</span>g</h2>
         </section>
-        {/* <MealList /> */}
-        <h2>{remainingFiber}g fiber left!</h2>
-        <MealPlanner remainingFiber={remainingFiber}/>
+        <section className="homePageFormShell">
+          <FoodSearch updateTotalFiber={updateTotalFiber} />
+        </section>
+        <br></br>
+        <section className="homePageMealPlannerShell">
+          <MealPlanner remainingFiber={remainingFiber}/>
+        </section>       
+        {/* <section className="homePageMealDataShell">
+          
+        </section> */}
       </div>
     )
 }
 
 
-
-
-
-
-
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //       try {
-    //         const response = await axios.get(`${API_URL}?query=1lb brisket and fries`, {
-    //             headers: {
-    //                 'X-Api-Key': API_KEY
-    //             }
-    //         });
-    //         setData(response.data);
-    //       } catch (error) {
-    //         setError(error);
-    //       }
-    //     };
-    
-    //     fetchData();
-    //   }, []);
-
-
-    {/* <h1>{JSON.stringify(data)}</h1> */}

@@ -1,0 +1,233 @@
+*, *::before, * ::after { box-sizing: border-box; }
+
+body{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+/* HOMEPAGE  */
+
+.homePageTitle, .homePageCurrentFiber, .homePageDailyFiberGoal, .foodsEatenLabel, .numberOfMealsLabel{
+    color: #464E47;
+    font-weight: normal;
+}
+
+.homePageDynamicCurrentFiber{
+    /* color: red; */
+}
+
+.homePageTitle{
+    font-size: 28px;
+    align-self: start;
+    
+}
+
+.homePageShell{
+    /* border: solid 1px #464E47; */
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.homePageFiberStats{
+    background-color: #F7B2BD;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+}
+
+.homePageDailyFiberGoal, .homePageCurrentFiber{
+    font-size: 16px;
+}
+
+.homePageFormShell{
+    /* border: solid 1px blue; */
+    background-color: #FBDADE;
+}
+
+.homePageMealPlannerShell{
+    height: 275px;
+    /* background-color: #D0FFD6; */
+}
+
+.homePageRemainingFiberH2, .mealPlannerMealsLeftH3, .numberOfMealsLabel{
+    color: #464E47;
+    font-weight: normal;
+}
+
+
+
+/* MEAL PLANNER */
+
+.mealPlannerShell{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.mealPlannerTop{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #85FF97;
+}
+
+.mealPlannerTopShell{
+    background-color: #D0FFD6;
+}
+
+.mealPlannerMiddle{
+    height: 220px;
+    background-color: #D0FFD6;
+
+}
+
+.mealPlannerBottom{
+    display: flex;
+    height: 25px;
+    width: 100%;
+    background-color: #85FF97;
+}
+
+.mealPlannerPlannedMeals{
+    width: 100%;
+    padding: 0;
+}
+
+
+.mealPlannerMealSuggestions{
+    height: 285px
+}
+
+.mealDataMeals{
+    font-family: "Silkscreen", sans-serif;
+    color: #F5A3B0;
+    display: flex;
+    font-size: 14px;
+}
+
+.mealDataFiberAmount{
+    color: #EB475A;
+}
+
+.mealPlannerMealItems{
+    color: #5CC8FF;
+    font-family: "Silkscreen", sans-serif;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.mealPlannerDeleteBtn{
+
+}
+
+.mealPlannerMealsLeftH3{
+    color: #464E47;
+}
+
+.mealPlannerTopText{
+    color: #464E47;
+}
+
+.mealDataShell{
+    background-color: #ADE4FF;
+    height: 285px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mealPlannerMealSuggestions{
+    padding: 0;
+}
+
+.mealPlannerPlannedFiber{
+    color: #5CC8FF;
+}
+
+.mealPlannerForm{
+    width: 100%;
+}
+
+.inputSection{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.numberOfMealsInput{
+    background-color: #D0FFD6;
+    border: solid .5px #464E47;
+    color: #464E47;
+}
+
+/* FOODSEARCH */
+
+.foodsEatenForm{
+    /* border: solid 1px violet; */
+    background-color: #F7B2BD;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.resultsDiv{
+    height: 200px;
+    background-color: #FBDADE;
+}
+
+.foodSearchFoodItem{
+    font-family: "Silkscreen", sans-serif;
+    text-transform: uppercase;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.foodSearchFoodEatenDeleteBtn, .mealPlannerDeleteBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDEDEF;
+    border: solid .1px #464E47;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+    color: red;
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+}
+
+.foodSearchSubmitBtn, .mealPlannerSubmitBtn, .mealDataBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #5CC8FF;
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    background-color: #FDEDEF;
+    border: solid .1px #464E47;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+}
+
+.mealDataBtn{}
+
+.mealPlannerSubmitBtn{
+    background-color: #D0FFD6;
+}
+
+.mealPlannerDeleteBtn{
+    background-color: #D0FFD6;
+}
+
+.foodSearchFoodEatenInput{
+    background-color: #FBDADE;
+    color: #464E47;
+}
