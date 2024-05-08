@@ -1,10 +1,8 @@
-# Frontend Mentor - Interactive card details form solution
-
-
+# Fiber Calculator
 
 ## Table of contents
 
-- [Frontend Mentor - Interactive card details form solution](#frontend-mentor---interactive-card-details-form-solution)
+- [Fiber Calculator](#fiber-calculator)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
