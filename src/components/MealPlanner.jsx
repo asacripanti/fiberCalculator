@@ -65,17 +65,23 @@ export default function MealPlanner(remainingFiber){
     }
 
     function fiberToGoQuery(){
-        axios.get(`http://localhost:3000/api/meal/avgFiber?avgFiberMeal=${avgFiberToGoMeal}`)
-        .then(response => {
-          // Handle the response here
-          setMealData(response.data);
-          setNextMeal(prevMeal => !prevMeal);
-          setNextMealBtn(prevButton => !prevButton);
-          console.log('Response:', response.data);
-        })
-        .catch(error => {
-          console.error('Error fetching meals:', error);
-        });
+        if(mealsLeft > 0){
+            axios.get(`http://localhost:3000/api/meal/avgFiber?avgFiberMeal=${avgFiberToGoMeal}`)
+            .then(response => {
+              // Handle the response here
+              setMealData(response.data);
+              setNextMeal(prevMeal => !prevMeal);
+              setNextMealBtn(prevButton => !prevButton);
+              console.log('Response:', response.data);
+            })
+            .catch(error => {
+              console.error('Error fetching meals:', error);
+            });
+        }
+        else{
+            alert("No more meals left!");
+        }
+
     }
 
     function removeMeal(index) {
@@ -115,9 +121,9 @@ export default function MealPlanner(remainingFiber){
                 <ul className="mealPlannerPlannedMeals">
                         <li className="mealPlannerPlannedFiber">Planned Fiber: {plannedFiber}g</li>
                         {plannedMeals.map((meal, index) => (
-                        <li className="mealPlannerMealItems" key={index}>{meal.name} - Fiber: {meal.fiber_amount}g <button className="mealPlannerDeleteBtn" onClick={() => removeMeal(index)}>X</button></li>
+                        <li className="mealPlannerMealItems" key={index}>{meal.name} - Fiber: {meal.fiber_amount}g  <button className="mealPlannerDeleteBtn" onClick={() => removeMeal(index)}>X</button></li>
                         ))}
-                        {addNextMealBtn && <button onClick={fiberToGoQuery}>Add next meal</button>}
+                        {addNextMealBtn && <button className="mealPlannerAddNextMealBtn" onClick={fiberToGoQuery}>Add next meal</button>}
                     </ul>
                 </section>
                 <section className="mealPlannerBottom">
@@ -145,7 +151,7 @@ export default function MealPlanner(remainingFiber){
                    {nextMeal && <ul className="mealPlannerMealSuggestions">
                         {mealData && mealData.map(meal => (
                             <li className="mealDataMeals" key={meal.id}>
-                                {meal.name} - <span className="mealDataFiberAmount"> Fiber: {meal.fiber_amount}g</span> <button className="mealDataBtn" onClick={() => addMeal(meal)}>+</button>
+                                <span mealDataMealName>{meal.name} - <span className="mealDataFiberAmount"> Fiber: {meal.fiber_amount}g</span> </span><button className="mealDataBtn" onClick={() => addMeal(meal)}>+</button>
                             </li>
                         ))}
                     </ul>}

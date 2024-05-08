@@ -68,7 +68,7 @@ ul{
 /* MEAL PLANNER */
 
 .mealPlannerShell{
-    height: 100%;
+    /* min-height: 600px; */
     display: flex;
     flex-direction: column;
     
@@ -104,18 +104,28 @@ ul{
 
 
 .mealPlannerMealSuggestions{
-    height: 285px
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .mealDataMeals{
     font-family: "Silkscreen", sans-serif;
     color: #F5A3B0;
     display: flex;
-    font-size: 14px;
+    justify-content: space-between;
+    font-size: 10px;
+    width: 100%;;
+
+}
+
+.mealDataMealName{
+
 }
 
 .mealDataFiberAmount{
     color: #EB475A;
+    
 }
 
 .mealPlannerMealItems{
@@ -123,7 +133,7 @@ ul{
     font-family: "Silkscreen", sans-serif;
     font-size: 12px;
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: flex-end; */
 }
 
 .mealPlannerDeleteBtn{
@@ -140,13 +150,17 @@ ul{
 
 .mealDataShell{
     background-color: #ADE4FF;
-    height: 285px;
-    display: flex;
-    flex-direction: column;
+    min-height: 285px;
+    /* max-height: 400px; */
+    /* display: flex;
+    justify-content: flex-start; */
+    /* display: grid;
+    grid-template-columns: 400px 100px 100px; */
 }
 
 .mealPlannerMealSuggestions{
     padding: 0;
+    display: flex;
 }
 
 .mealPlannerPlannedFiber{
@@ -201,7 +215,8 @@ ul{
     color: red;
     width: 20px;
     height: 20px;
-    font-size: 18px;
+    font-size: 10px;
+    cursor: pointer;
 }
 
 .foodSearchSubmitBtn, .mealPlannerSubmitBtn, .mealDataBtn{
@@ -209,15 +224,19 @@ ul{
     justify-content: center;
     align-items: center;
     color: #5CC8FF;
-    font-size: 18px;
+    font-size: 12px;
     width: 20px;
     height: 20px;
     background-color: #FDEDEF;
     border: solid .1px #464E47;
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0, .7);
+    cursor: pointer;
+    /* padding: 1px; */
 }
 
-.mealDataBtn{}
+.mealDataBtn{
+   margin-right: 40px;
+}
 
 .mealPlannerSubmitBtn{
     background-color: #D0FFD6;
