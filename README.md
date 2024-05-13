@@ -5,32 +5,19 @@
 - [Fiber Calculator](#fiber-calculator)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
     - [Built with](#built-with)
     - [Running the app](#running-the-app)
   - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 A calculator that helps you plan out your meals for the day to hit your daily fiber goal.
-
-### The challenge
 
 Users should be able to:
 
 - Fill in the forms and see the  details update in real-time
 - Select meals to be able to add to planner
 - Delete unwanted meals or food added to categories
-
-### Screenshot
-
-![Desktop view of form](images/desktopForm.png)
-![Desktop view of form submission](images/desktopComplete.png)
-![Mobile view of form](images/mobileForm.png)
-![Mobile view of form submission](images/mobileComplete.png)
-
 
 ### Built with
 
