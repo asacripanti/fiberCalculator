@@ -10,9 +10,7 @@ export default function MealPlanner(remainingFiber){
     )
 
     const [mealData, setMealData] = React.useState(null);
-
     const [nextMeal, setNextMeal] = React.useState(null);
-
     const [plannedMeals, setPlannedMeals] = React.useState([]);
     const [plannedFiber, setPlannedFiber] = React.useState(0);
     const [mealsLeft, setMealsLeft] = React.useState(mealFormData.numberOfMeals);
@@ -146,8 +144,6 @@ export default function MealPlanner(remainingFiber){
             </div>
             <br></br>
             <div className="mealDataShell">
-                    {/* <h3>Meal Data</h3> */}
-                 
                    {nextMeal && <ul className="mealPlannerMealSuggestions">
                         {mealData && mealData.map(meal => (
                             <li className="mealDataMeals" key={meal.id}>

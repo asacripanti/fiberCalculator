@@ -19,7 +19,6 @@ export default function FoodSearch({ updateTotalFiber }){
                     'X-Api-Key': API_KEY
                 }
             });
-            // setSearchResult(prevResults => [...prevResults, response.data[0]?.fiber_g]);
             setSearchResult(prevResults => [...prevResults, {
                 foodName: query,
                 fiberAmount: response.data[0]?.fiber_g
@@ -44,23 +43,9 @@ export default function FoodSearch({ updateTotalFiber }){
             return updatedMeals;
         });
     }  
-
-  
-
-    // function randomColor(valuers){
-    //     const randomNum = Math.floor(Math.random() * 3);
-    // }
-
-
     const id = React.useId()
     const colorWheel = ["#5CC8FF", "#D0FFD6", "#F7B2BD"];
-
-    // const valuers = Math.floor(Math.random() * 3);
-
     const color = colorWheel[1];
-
-    // const colorIndex = index % colorWheel.length;
-  
 
     return(
         <div>
