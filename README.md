@@ -34,6 +34,7 @@ Users should be able to:
 - Navigate to the project directory
 - install all dependencies 'npm install'
 - Start the server 'npm start'
+- Run this line of code in your terminal to populate the meal table with the sql file: psql -d fibercalculator -f populate_meal_table.sql
 - Open a new terminal window and navigate to the project directory
 - Start the frontend 'npm run dev'
 - Copy and paste the url for the server into your browser. 
